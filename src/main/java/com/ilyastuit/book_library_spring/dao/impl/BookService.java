@@ -36,6 +36,16 @@ public class BookService implements BookDao {
     }
 
     @Override
+    public void updateViewCount(long viewCount, long id) {
+        bookRepository.updateViewCount(viewCount, id);
+    }
+
+    @Override
+    public void updateRating(long totalRating, long totalViewCount, int avgRating, long id) {
+        bookRepository.updateRating(totalRating, totalViewCount, avgRating, id);
+    }
+
+    @Override
     public List<Book> getAll() {
         return bookRepository.findAll();
     }
