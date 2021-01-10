@@ -32,6 +32,11 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+
+    maven {
+        url 'http://repository.primefaces.org'
+    }
+
 }
 
 ext['hibernate.version'] = '5.4.2.Final'
@@ -53,6 +58,16 @@ dependencies {
 
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
     providedCompile 'javax:javaee-api:7.0'
+
+    implementation 'org.primefaces:primefaces:6.0'
+    implementation group: 'javax.el', name: 'javax.el-api', version: '3.0.0'
+    implementation 'org.omnifaces:omnifaces:2.5.1'
+    implementation 'net.bootsfaces:bootsfaces:1.0.0'
+
+    implementation 'commons-io:commons-io:+'
+    implementation 'commons-fileupload:commons-fileupload:+'
+
+    implementation('org.primefaces.themes:bootstrap:1.0.10')
 }
 
 test {
