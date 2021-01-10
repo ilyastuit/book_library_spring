@@ -1,19 +1,23 @@
 spring:
+  main:
+    web-application-type: none
   datasource:
-    default-catalog: library
-    jndi-name: jdbc/Library
+    driver-class-name: com.mysql.cj.jdbc.MysqlDataSource
+    url: jdbc:mysql://localhost:33061/library_spring
+    username: library
+    password: "library"
   jpa:
     database-platform: org.hibernate.dialect.MySQL8InnoDBDialect
     properties:
       hibernate:
         current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
-        dialect: orh.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
     show-sql: true
 
 logging:
   file:
-    name: D:\java\learn\book_library_spring\logs\logs.log
+    name: D:\java\learn\book_library_spring\logs\
   pattern:
     file: "%d{HH:mm:ss} %-5p [%c] - %m%n"
 

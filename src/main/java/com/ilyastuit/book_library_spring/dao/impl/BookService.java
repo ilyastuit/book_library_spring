@@ -22,7 +22,7 @@ public class BookService implements BookDao {
 
     @Override
     public List<Book> findTopBooks(int limit) {
-        return bookRepository.findTopBooks(PageRequest.of(0,limit, Sort.by(Sort.Direction.DESC, "viewCount")));
+        return bookRepository.findTopBooks(PageRequest.of(0, limit, Sort.by(Sort.Direction.DESC, "viewCount")));
     }
 
     @Override
@@ -60,7 +60,7 @@ public class BookService implements BookDao {
     public Book save(Book obj) {
         bookRepository.save(obj);
 
-        if (obj.getContent()!=null) {
+        if (obj.getContent() != null) {
             bookRepository.updateContent(obj.getContent(), obj.getId());
         }
 
@@ -88,7 +88,7 @@ public class BookService implements BookDao {
     }
 
     @Override
-    public Page<Book> search(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection, String ...searchString) {
+    public Page<Book> search(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection, String... searchString) {
         return bookRepository.findByNameContainingIgnoreCaseOrAuthorFioContainingIgnoreCaseOrderByName(searchString[0], searchString[0], PageRequest.of(pageNumber, pageSize, sortDirection, sortField));
     }
 }
