@@ -1,13 +1,11 @@
 package com.ilyastuit.book_library_spring;
 
-import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+@SpringBootApplication(scanBasePackages = {"com.ilyastuit.book_library_spring"})
+@EnableAspectJAutoProxy
 public class ServletInitializer extends SpringBootServletInitializer {
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(BookLibrarySpringApplication.class);
-    }
 
 }

@@ -1,10 +1,3 @@
-managment:
-  security:
-    enabled: false
-security:
-  basic:
-    enabled: false
-
 spring:
   datasource:
     default-catalog: library
@@ -26,9 +19,9 @@ logging:
 
   level:
     ROOT: error
-    org.springframework: warn
-    javax.faces: warn
-    org.comnifaces: warn
-    org.springframework.security: warn
-    org.hibernate: warn
-    org.hibernate.type.descriptor: warn
+    org.springframework: trace
+    javax.faces: trace
+    org.comnifaces: trace
+    org.springframework.security: trace
+    org.hibernate: trace
+    org.hibernate.type.descriptor: trace
